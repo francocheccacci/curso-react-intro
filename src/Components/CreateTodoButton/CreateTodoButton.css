@@ -1,0 +1,29 @@
+.todoAddBtn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0px 0px 20px 0px rgba(99,88,238,1);
+    color: white;
+    background-color: rgba(150,93,233,1);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease-in 0.3s;
+    
+}
+
+.todoAddBtn:hover{
+    background-color: white;
+    color: rgba(150,93,233,1);
+    font-size: 25px;
+    transition: ease-out 0.3s;
+}
+
+.container-btn{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+}

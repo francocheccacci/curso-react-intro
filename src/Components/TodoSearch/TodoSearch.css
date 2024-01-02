@@ -1,0 +1,27 @@
+.container-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.input-search{
+    width: 80%;
+    border-radius: 15px;
+    height: 30px;
+    text-align: center;
+    border: 3px solid  rgba(99,88,238,0.5);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Poppins';
+}
+.input-search:focus{
+    border: 3px solid  rgba(99,88,238,1);
+    outline: none;
+}
+.input-search::placeholder{
+    color: #333333;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Poppins';
+}

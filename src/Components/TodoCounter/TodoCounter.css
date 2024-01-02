@@ -1,0 +1,17 @@
+.container-counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.h2-counter{
+    color: white;
+    font-size: 40px;
+    text-decoration: underline;
+    text-decoration-color: rgba(99,88,238,1);
+}
+
+.h2-counter > span {
+    color: rgba(99,88,238,1);
+}
