@@ -5,20 +5,25 @@ import {TodoSearch} from './Components/TodoSearch/TodoSearch.js';
 import {TodoList} from './Components/TodoList/TodoList.js';
 import {TodoItem } from './Components/TodoItem/TodoItem.js';
 import { CreateTodoButton } from './Components/CreateTodoButton/CreateTodoButton.js';
-
+import { useStorage } from './Hooks/useStorage.js';
 
 
 function App() {
-  const testTodo = [
-    {text:'primer tododa sd asd sa das dasdadasda ', completed:true},
-    {text:'segundo todo', completed:true},
-    {text:'tercer todo', completed:false},
-    {text:'cuarto todo', completed:false},
-  ]
+    // const testTodo = [
+    //   {text:'Hola', completed:true},
+    //   {text:'como estas perro', completed:true},
+    //   {text:'me aburro', completed:false},
+    //   {text:'que poronga hermano', completed:false},
+    // ]
+
   // states 
   const [searchValue, setSearchValue] = useState('')
-  const [todos, setTodos] = useState(testTodo);
-  
+
+  const [todos, saveTodos] = useStorage('TODOS_V1', [])
+
+
+
+
   //filter todos
   const searchedTodos = todos.filter( (todo) => todo.text.toLowerCase().includes(searchValue.toLowerCase()) )
   //complete and delete todo
@@ -31,13 +36,16 @@ function App() {
         todo.completed = false;
       }
     })
-    setTodos(newTodos);
+    saveTodos(newTodos);
   }
+
+
   
   const deteleTodo = (text) => {
     const newTodos = [...todos]
     const filterTodos = newTodos.filter( (todo) => todo.text.toLowerCase() !== text.toLowerCase() )
-    setTodos(filterTodos);
+    localStorage.setItem('TODOS_V1', JSON.stringify(filterTodos))
+    saveTodos(filterTodos);
   }
 
   return (
