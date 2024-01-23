@@ -1,11 +1,8 @@
-
-import './TodoCounter.css'
-
 const TodoCounter = ({completed, total}) => {
   return (
-    <div className='container-counter'>
-       <h2 className='h2-counter'>
-        Completaste <span>{completed}</span> de <span>{total}</span> tareas.
+    <div className='flex justify-center pt-6'>
+       <h2 className='text-4xl font-bold text-center'>
+        Completaste <span className='text-blue-500'>{completed}</span> de <span className='text-blue-500'>{total}</span> tareas.
        </h2>
     </div>
   )

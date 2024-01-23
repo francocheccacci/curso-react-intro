@@ -4,7 +4,7 @@ import './TodoSearch.css'
 
   console.log(searchValue)
   return (
-    <div className='container-input'>
+    <div className="flex justify-center items-center pt-8">
       <input className='input-search' value={searchValue} onChange={(event) =>{
         setSearchValue(event.target.value)
       }} placeholder='BUSCA TUS TAREAS AQUI' />

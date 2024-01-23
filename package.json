@@ -5,12 +5,14 @@
     "react": "^18",
     "react-dom": "^18",
     "react-scripts": "5.0.1",
+    "tailwindcss": "^3.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:css": "tailwind build src/styles.css -o dist/styles.css"
   },
   "eslintConfig": {
     "extends": [

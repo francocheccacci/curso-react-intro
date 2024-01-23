@@ -1,12 +1,9 @@
-import React from 'react'
-import './TodoList.css'
+import React from 'react';
 
 const TodoList = ({children}) => {
   return (
-    <ul className='todoList'>
+    <ul className='list-none p-4'>
         {children}
-        {/*uso children para que levante los que 
-        estan dentro de las etiquetas TodoList */}
     </ul>
   )
 }
