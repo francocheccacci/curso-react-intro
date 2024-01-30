@@ -22,6 +22,15 @@ function App() {
 
   const [todos, saveTodos] = useStorage('TODOS_V1', [])
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
 
 
@@ -40,8 +49,6 @@ function App() {
     saveTodos(newTodos);
   }
 
-
-  
   const deteleTodo = (text) => {
     const newTodos = [...todos]
     const filterTodos = newTodos.filter( (todo) => todo.text.toLowerCase() !== text.toLowerCase() )
@@ -65,8 +72,8 @@ function App() {
          
        </div>
        
-       <CreateTodoButton todos={todos} saveTodos={saveTodos}></CreateTodoButton>
-       <ModalTodo></ModalTodo> 
+       <CreateTodoButton onOpen={handleOpenModal} ></CreateTodoButton>
+       <ModalTodo isOpen={isModalOpen} onClose={handleCloseModal} todos={todos} saveTodos={saveTodos}></ModalTodo> 
     
     </React.Fragment>
   );
